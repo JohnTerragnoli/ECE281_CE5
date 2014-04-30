@@ -8,6 +8,6 @@ The purpose of this task was to initialize the registers $S0 and $S1 with the de
 ```
 addi $S0, $0, 44
 addi $S1, $0, -37
-addi $S2, $0, $1
-sw $S2, 0X54($0)
+add $S2, $0, $1
+sw $S2,54($0)
 ```
