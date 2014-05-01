@@ -10,7 +10,7 @@ Task 1 Code:
 ```
 addi $S0, $0, 44
 addi $S1, $0, -37
-add $S2, $0, $1
+add $S2, $S0, $S1
 sw $S2, 0x54($0)
 ```
 
@@ -26,11 +26,16 @@ Assembly Code:
 ```
 addi $S0, $0, 44
 addi $S1, $0, -37
-add $S2, $0, $1
+add $S2, $S0, $S1
 sw $S2, 0x54($0)
 ```
 
-Converted to Binary:
+Converted to Decimal:
+This probably isn't right.  
 ```
-
+|op|rs|rt|imm|
+|8|0|16|44|
+|8|1|16|-37|
+|0|16|17|18|32|
+|43|16|84|0|
 ```
