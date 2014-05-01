@@ -13,3 +13,24 @@ addi $S1, $0, -37
 add $S2, $0, $1
 sw $S2, 0x54($0)
 ```
+
+
+
+#**Task 2** 
+
+For this portion of the computer exereise the instructions made in task 1 were hand assembled.  The machine code was then written in hexidecimal.  This process can be seen below: 
+
+Task 2 Code:
+
+Assembly Code:
+```
+addi $S0, $0, 44
+addi $S1, $0, -37
+add $S2, $0, $1
+sw $S2, 0x54($0)
+```
+
+Converted to Binary:
+```
+
+```
