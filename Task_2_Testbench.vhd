@@ -1,22 +1,22 @@
 --------------------------------------------------------------------------------
--- Company: 
--- Engineer:
+-- Company: USAFA
+-- Engineer: C3C John Terragnoli
 --
 -- Create Date:   18:56:08 05/01/2014
--- Design Name:   
+-- Design Name:   Task_2_Testbench
 -- Module Name:   C:/Users/C16John.Terragnoli/Documents/Documents/My Documents/Academics/Sophomore Year/Spring Semester/ECE 281/ISE Project Stuff/CE5_Terragnoli/Task_2_Testbench.vhd
 -- Project Name:  CE5_Terragnoli
--- Target Device:  
--- Tool versions:  
--- Description:   
+-- Target Device:  mips
+-- Tool versions:  1.0
+-- Description:   should test the set of instructions created in CE5.  
 -- 
 -- VHDL Test Bench Created by ISE for module: mips
 -- 
--- Dependencies:
+-- Dependencies: mips.vhd
 -- 
--- Revision:
+-- Revision: none
 -- Revision 0.01 - File Created
--- Additional Comments:
+-- Additional Comments: none 
 --
 -- Notes: 
 -- This testbench has been automatically generated using types std_logic and
@@ -99,15 +99,6 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-		wait for clk_period;
-		
-		
-
-
-		
-
-      wait for clk_period*10;
-		
 		-- insert stimulus here 
 		instr <= X"2010002C";
 		wait for clk_period;
@@ -115,8 +106,7 @@ BEGIN
 		wait for clk_period;
 		instr <= X"02119020";
 		wait for clk_period;
-		instr <= X"AC120054";
-		
+		instr <= X"AC120054";	
       wait;
    end process;
 

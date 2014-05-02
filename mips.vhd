@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+--Author: John Terragnoli 
+--Company: USAFA
+--Program: mips.vhd
+--comments: given to me from the ECE department, I did not 
+--actually write any of this code.  
+
+
+
+------------------------------------------------------------
 -- mips.vhd
 -- David_Harris@hmc.edu and Sarah_Harris@hmc.edu 30 May 2006
 -- Single Cycle MIPS processor
