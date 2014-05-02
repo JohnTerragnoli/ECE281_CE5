@@ -67,6 +67,11 @@ Convert into Hex:
 0xAC120054
 ```
 
+This hex code was then copied into the ISE Project Navigator.  This [mips.vhd](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/mips.vhd) file and this [Task_2_testbench](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_2_Testbench.vhd)  were used to run the code.  The actual code was copied into the testbench file and the mips.vhd file was not changed.  Once the simulation was initiated, this [file](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/mips_waveform.wcfg) was loaded into the simulator so that it would work correctly.  
+
+
+
+#Simulation Snapshot 
 
 
 
