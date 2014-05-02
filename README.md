@@ -77,4 +77,7 @@ The waveform file given in the lab did no run correctly.  So in order to get the
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_2_Simulation.PNG "Task 2 simulation")
 
+After the correct waveforms were added, a waveform file was created and saved, so that it could be refereced for later work.  This is the [New_Waveform](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/actual_waveform.wcfg) file.  
 
+#Documentation: 
+C3C Sabin Park helped me figure out how to add the correct waveforms to the simulation.  
