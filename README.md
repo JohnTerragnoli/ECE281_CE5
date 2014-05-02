@@ -73,5 +73,8 @@ This hex code was then copied into the ISE Project Navigator.  This [mips.vhd](h
 
 #Simulation Snapshot 
 
+The simulation did not run correctly.  The program would load into the simulator and show some waveforms, however, when the .wfcg was loaded, all of the waveforms dissapeared from view.  A screen shot of this can be seen below, before the .wfcg was loaded.  
+
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_2_wrong.PNG "Wrong simulation")
 
 
