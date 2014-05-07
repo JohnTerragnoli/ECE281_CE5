@@ -96,13 +96,44 @@ In order to implement this design, some changes were made to the MIPS Processor.
 
 
 
-
+##Diagram
 These changes were made for the following reasons: 
 
 
 
+////////////insert reasons why the changes were made
 
 
+
+
+##Tables
+The changes can be seen in the tables below: 
+
+
+///////////////insert ALU decoder
+
+
+
+///////////////insert Main decoder
+
+
+
+
+##Code: 
+
+
+
+
+In order to implement these changes into the MIPS design already created, the main decoder and the ALU decoder were edited as required.  The following changes were made to the code: 
+
+
+
+//////////////////insert what changes were made to the code.  
+
+
+
+
+##Code Testing
 
 
 #Documentation: 
