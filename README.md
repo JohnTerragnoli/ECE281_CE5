@@ -79,5 +79,31 @@ The waveform file given in the lab did no run correctly.  So in order to get the
 
 After the correct waveforms were added, a waveform file was created and saved, so that it could be refereced for later work.  This is the [New_Waveform](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/actual_waveform.wcfg) file.  
 
+
+#Task 3: 
+
+The purpose of this task was to add the instruction "ori" to the MIPS design.  The ori command means to take a value in from memory and "or" this value with an immediate number.  
+
+In order to implement this design, some changes were made to the MIPS Processor.  These changes can be seen below: 
+
+
+
+
+////////////insert picture of altered MIPS design.  
+
+
+
+
+
+
+
+These changes were made for the following reasons: 
+
+
+
+
+
+
+
 #Documentation: 
 C3C Sabin Park helped me figure out how to add the correct waveforms to the simulation.  
