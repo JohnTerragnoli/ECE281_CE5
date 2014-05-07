@@ -90,7 +90,7 @@ In order to implement this design, some changes were made to the MIPS Processor.
 
 
 ////////////insert picture of altered MIPS design.  
-
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_2_Simulation.PNG "Altered Controller")
 
 
 
@@ -134,6 +134,52 @@ In order to implement these changes into the MIPS design already created, the ma
 
 
 ##Code Testing
+
+The following assembly command was then implemented.
+
+```
+ori $S3, $S2, x8000
+```
+
+Note: 8000 is in decimal, as stated in the lab.  
+
+This command was then converted into binary, as in Task 2, and performed right after the contents of registers $S1 and $S0 were summed.  
+
+This binary code can be seen below.
+
+
+
+
+////////////////insert binary code below
+```
+```
+
+
+
+The binary code was then converted to hex so that it could be used in the program.  
+
+
+
+
+/////////////////////insert bex code below: 
+
+
+
+
+
+
+
+
+This program was then run and tested, just like in Task 2 step 2 shown above.  
+
+A screenshot of this test can be seen below: 
+
+
+
+//////////////////////////insert picture of task 3 simulation 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_2_Simulation.PNG "Task 3 Simulation")
+
+
 
 
 #Documentation: 
