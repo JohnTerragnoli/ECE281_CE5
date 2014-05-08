@@ -141,9 +141,7 @@ Then the table for the Main Decoder was built.  This can be seen below:
 | ori | 001101 | 1 | 0 | 11 | 0 | 0 | 0 | 11 | 0 |
 
 
-
-
-///////////////insert Main decoder
+The only line that was created in this line was the last row.  
 
 
 
