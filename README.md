@@ -105,14 +105,22 @@ The changes to this section of the schematic can be seen below:
 
 These changes were made for the following reasons: 
 
-In order for the ori command to work properly, the sign extend cannot be used for negative numbers.  If this were the case, then the first 4 hex digits of the result of the ori function would be "FFFF" if a negative number was used as the immediate value.  Therefore, whenever the ori command is chosen, a zero extend should be performed on the immediate value rather than a sign extend.  
-
+In order for the ori command to work properly, the sign extend cannot be used for negative numbers.  If this were the case, then the first 4 hex digits of the result of the ori function would be "FFFF" if a negative number was used as the immediate value.  Therefore, whenever the ori command is chosen, a zero extend should be performed on the immediate value rather than a sign extend.  To decide between this sign extend and the zero extend, a multiplexer was built.  Then an extra bit was added to the ALUsrc command, so that the controller can command when the ori command will occur.  
 
 
 
 
 ##Tables
 The changes can be seen in the tables below: 
+
+| ALUOp 1:0 | Meaning |
+|---|---|
+| 00 | Add |
+| 01 | Subtract |
+| 10 | look at function field |
+| 11 | ori |
+
+Sick
 
 
 ///////////////insert ALU decoder
