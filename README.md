@@ -141,7 +141,7 @@ Then the table for the Main Decoder was built.  This can be seen below:
 | ori | 001101 | 1 | 0 | 11 | 0 | 0 | 0 | 11 | 0 |
 
 
-The only line that was created in this line was the last row.  
+The only line that was created in this line was the last row.  This line was filled out simply by considering what the "ori" command does and what it requires.  
 
 
 
@@ -153,9 +153,7 @@ The only line that was created in this line was the last row.
 
 In order to implement these changes into the MIPS design already created, the main decoder and the ALU decoder were edited as required.  Copies of these files can be seen here:  [mips](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_3_mips.txt) and [testbench](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task3_Testbench.txt).  The following changes were made to the code: 
 
-
-
-//////////////////insert what changes were made to the code.  
+The biggest change was to create, declare, and instantiate a zero extender that was hooked up to the instruction wire.  Then, a wire signal comming out of the extender was declared.  After this was done, another instantiation of the mux2 multplexer was created.  The two inputs were the sign extend and the zero extend, as shown in the schematic above.  This was not difficult.  What was difficult was creating the control signal for this mux.  The control signal comes form the ALUsrc, as defined in the table above.  In the original mips vhdl design, the ALUscr signal was only one bit long.  To accommodate for the ori command, the ALUsrc signal was lengthened to be 2 bits long.  Doing this, however, had implications as well.  All of the parts that used the ALUsrc signal had to account for this length change.  This was done by changing declarations to be std_logic_vectors instead of just std_logic.  Also, the control signal was lengthened by one bit, because it interacts with the ALUsrc signal.  
 
 
 
@@ -168,32 +166,21 @@ The following assembly command was then implemented.
 ori $S3, $S2, x8000
 ```
 
-Note: 8000 is in decimal, as stated in the lab.  
+Note: 8000 is in hexadecimal, as stated in the lab.  
 
 This command was then converted into binary, as in Task 2, and performed right after the contents of registers $S1 and $S0 were summed.  
 
-This binary code can be seen below.
+| Op code | rs | rt | imm | 
+|-------|------|----|---|
+| 001101 | 10010 | 10011 | 1000 0000 0000 0000|
 
-
-
-
-////////////////insert binary code below
-```
-```
 
 
 
 The binary code was then converted to hex so that it could be used in the program.  
 
-
-
-
-/////////////////////insert bex code below: 
-
-
-
-
-
+| 0011 | 0110 | 0101 | 0011 | 1000 | 0000 | 0000 | 0000|
+| 3 | 6 | 5 | 3 | 8 | 0 | 0 | 0 |
 
 
 
@@ -202,8 +189,6 @@ This program was then run and tested, just like in Task 2 step 2 shown above.
 A screenshot of this test can be seen below: 
 
 
-
-//////////////////////////insert picture of task 3 simulation 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_3_Simulation.PNG "Task 3 Simulation")
 
 
@@ -211,3 +196,5 @@ A screenshot of this test can be seen below:
 
 #Documentation: 
 C3C Sabin Park helped me figure out how to add the correct waveforms to the simulation.  
+
+C3C Sabin Park and I brainstormed ideas on how to add the ori command.  
