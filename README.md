@@ -123,12 +123,14 @@ Below is the ALU decoder
 | 10 | look at function field |
 | 11 | ori |
 
-Sick
+Sick!!!!
 
-The last line was the only part of this table changed from the instructions in the lab.  The 11 space was left blank, so this command was seized and used for the ori command, as it could have been programed for anything.  
+The last line was the only part of this table changed from the instructions in the lab.  The 11 space was left blank, so this command was seized and used for the ori command;it could have been programed for anything.  
 
 
-Then the next comman
+Then the table for the Main Decoder was built.  This can be seen below: 
+
+| Instruction | (Op(5:0) | RegWrite | RegDst | AluSrc (1:0) | Branch | MemWrite | MemtoReg | ALUOp(1:0) | Jump | 
 
 
 
