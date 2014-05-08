@@ -138,11 +138,10 @@ Then the table for the Main Decoder was built.  This can be seen below:
 | beq | 000100 | 0 | X | 00 | 1 | 0 | X | 01 | 0 | 
 | addi | 001000 | 1 | 0 | 01 | 0 | 0 | 0 | 00 | 0 |
 | j | 000010 | 0 | X | XX | X | 0 | X | XX | 1 | 
+| ori | 001101 | 1 | 0 | 11 | 0 | 0 | 0 | 11 | 0 |
 
 
 
-
-| ori | 001101 | 
 
 ///////////////insert Main decoder
 
