@@ -124,7 +124,7 @@ The changes can be seen in the tables below:
 
 
 
-In order to implement these changes into the MIPS design already created, the main decoder and the ALU decoder were edited as required.  The following changes were made to the code: 
+In order to implement these changes into the MIPS design already created, the main decoder and the ALU decoder were edited as required.  Copies of these files can be seen here:  [mips](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_3_mips.txt) and [testbench](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task3_Testbench.txt).  The following changes were made to the code: 
 
 
 
@@ -177,7 +177,7 @@ A screenshot of this test can be seen below:
 
 
 //////////////////////////insert picture of task 3 simulation 
-![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_2_Simulation.PNG "Task 3 Simulation")
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_3_Simulation.PNG "Task 3 Simulation")
 
 
 
