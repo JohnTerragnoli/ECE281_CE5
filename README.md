@@ -113,6 +113,9 @@ In order for the ori command to work properly, the sign extend cannot be used fo
 ##Tables
 The changes can be seen in the tables below: 
 
+
+Below is the ALU decoder
+
 | ALUOp 1:0 | Meaning |
 |---|---|
 | 00 | Add |
@@ -122,8 +125,10 @@ The changes can be seen in the tables below:
 
 Sick
 
+The last line was the only part of this table changed from the instructions in the lab.  The 11 space was left blank, so this command was seized and used for the ori command, as it could have been programed for anything.  
 
-///////////////insert ALU decoder
+
+Then the next comman
 
 
 
