@@ -33,16 +33,17 @@ sw $S2, 0x54($0)
 
 Converted to Decimal:
 
-Always switch rt and rs.  Therefore, $s0 and $0 are switched when convertinging into decimal.  
+Always switch rt and rs when converting the command into machine language.  Therefore, $s0 and $0 are switched when convertinging into decimal. 
+
 ```
 --------------
-|8|0|16|44|
+|8|0|16|44| #put 44 in the register $S0
 ------------
-|8|0|17|-37|
+|8|0|17|-37|  #put -37 in the register $S1
 ---------------
-|0|16|17|18|0|32|
+|0|16|17|18|0|32|   #adds the values in $S0 and $S1 and stores the result in $S2.  
 ---------------
-|43|0|18|84|
+|43|0|18|84|  #stores the value in the $S2 register and saves it in memory address x54.  
 -------------
 ```
 
@@ -73,11 +74,16 @@ This hex code was then copied into the ISE Project Navigator.  This [mips.vhd](h
 
 #Simulation Snapshot 
 
-The waveform file given in the lab did no run correctly.  So in order to get the simulation to show the desired waveforms, the waveforms had to be selected in the "Instance and Process" section of the simulator.  They were added manually.  This simulation can be seen below: 
+The waveform file given in the lab did no run correctly, unless the name of the testbench was changed to a specific string.  So in order to get the simulation to show the desired waveforms, the waveforms had to be selected in the "Instance and Process" section of the simulator.  They were added manually.  This simulation can be seen below: 
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_2_Simulation.PNG "Task 2 simulation")
 
-After the correct waveforms were added, a waveform file was created and saved, so that it could be refereced for later work.  This is the [New_Waveform](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/actual_waveform.wcfg) file.  
+After the correct waveforms were added, a waveform file was created and saved, so that it could be refereced for later work.  This is the [New_Waveform](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/actual_waveform.wcfg) file. 
+
+
+To assure that the program was implemented correctly, the signal ALUout was analyzed.  For the first clock cycle, the value 44 appeared as the ALUout.  For the next clock cycle the signal was -37.  For the next clock cycle, the ALUout was the sum of those numbers.  For the next clock cycle after that, the memwrite signal changed to 7, meaning that the signal with a value of 7 is being written into memory.  All of these steps represent the tasks that the program was supposed to accomplish.  
+
+
 
 
 #Task 3: 
@@ -105,7 +111,7 @@ The changes to this section of the schematic can be seen below:
 
 These changes were made for the following reasons: 
 
-In order for the ori command to work properly, the sign extend cannot be used for negative numbers.  If this were the case, then the first 4 hex digits of the result of the ori function would be "FFFF" if a negative number was used as the immediate value.  Therefore, whenever the ori command is chosen, a zero extend should be performed on the immediate value rather than a sign extend.  To decide between this sign extend and the zero extend, a multiplexer was built.  Then an extra bit was added to the ALUsrc command, so that the controller can command when the ori command will occur.  
+In order for the ori command to work properly, the sign extend cannot be used for negative numbers.  If this were the case, then the first 4 hex digits of the result of the ori function would be "FFFF" if a negative number was used as the immediate value.  Therefore, whenever the ori command is chosen, a zero extend should be performed on the immediate value rather than a sign extend.  To decide between this sign extend and the zero extend, a multiplexer was built.  Then an extra bit was added to the ALUsrc command, so that the controller can command whether to use the zero extend or the sign extend when the it is necessary.  
 
 
 
@@ -123,7 +129,6 @@ Below is the ALU decoder
 | 10 | look at function field |
 | 11 | ori |
 
-Sick!!!!
 
 The last line was the only part of this table changed from the instructions in the lab.  The 11 space was left blank, so this command was seized and used for the ori command;it could have been programed for anything.  
 
@@ -163,7 +168,7 @@ The biggest change was to create, declare, and instantiate a zero extender that 
 The following assembly command was then implemented.
 
 ```
-ori $S3, $S2, x8000
+ori $S3, $S2, x8000 #or's the value stored in register $S2 with the immediate value x8000.  
 ```
 
 Note: 8000 is in hexadecimal, as stated in the lab.  
@@ -182,6 +187,8 @@ The binary code was then converted to hex so that it could be used in the progra
 | 0011 | 0110 | 0101 | 0011 | 1000 | 0000 | 0000 | 0000|
 | 3 | 6 | 5 | 3 | 8 | 0 | 0 | 0 |
 
+
+Answer = 	0x36538000
 
 
 This program was then run and tested, just like in Task 2 step 2 shown above.  
