@@ -84,24 +84,25 @@ After the correct waveforms were added, a waveform file was created and saved, s
 
 The purpose of this task was to add the instruction "ori" to the MIPS design.  The ori command means to take a value in from memory and "or" this value with an immediate number.  
 
-In order to implement this design, some changes were made to the MIPS Processor.  These changes can be seen below: 
-
-
-
-
-////////////insert picture of altered MIPS design.  
-![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_2_Simulation.PNG "Altered Controller")
-
-
+In order to implement this design, some changes were made to the MIPS Processor.  
 
 
 
 ##Diagram
+Below is the original design.  Outlined in red are the portions that were changed.  
+
+
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Altered_Schematic.PNG "Altered Controller")
+
+
+The changes to this section of the schematic can be seen below: 
+
+
+
+
 These changes were made for the following reasons: 
 
 
-
-////////////insert reasons why the changes were made
 
 
 
