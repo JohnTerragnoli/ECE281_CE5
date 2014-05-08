@@ -131,8 +131,18 @@ The last line was the only part of this table changed from the instructions in t
 Then the table for the Main Decoder was built.  This can be seen below: 
 
 | Instruction | (Op(5:0) | RegWrite | RegDst | AluSrc (1:0) | Branch | MemWrite | MemtoReg | ALUOp(1:0) | Jump | 
+|---|---|---|---|---|---|---|---|---|---|
+| R-Type | 000000 | 1 | 1 | 00 | 0 | 0 | 0 | 10 | 0 | 
+| Lw | 100011 | 1 | 0 | 01 | 0 | 0 | 1 | 00 | 0 | 
+| sw | 101011 | 0 | X | 01 | 0 | 1 | X | 00 | 0 | 
+| beq | 000100 | 0 | X | 00 | 1 | 0 | X | 01 | 0 | 
+| addi | 001000 | 1 | 0 | 01 | 0 | 0 | 0 | 00 | 0 |
+| j | 000010 | 0 | X | XX | X | 0 | X | XX | 1 | 
 
 
+
+
+| ori | 001101 | 
 
 ///////////////insert Main decoder
 
