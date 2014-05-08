@@ -98,10 +98,14 @@ Below is the original design.  Outlined in red are the portions that were change
 The changes to this section of the schematic can be seen below: 
 
 
+![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Altered_Schematic_2.JPG "Altered Controller")
+
+
 
 
 These changes were made for the following reasons: 
 
+In order for the ori command to work properly, the sign extend cannot be used for negative numbers.  If this were the case, then the first 4 hex digits of the result of the ori function would be "FFFF" if a negative number was used as the immediate value.  
 
 
 
