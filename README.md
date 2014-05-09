@@ -215,4 +215,6 @@ IT WORKS!!!
 #Documentation: 
 C3C Sabin Park helped me figure out how to add the correct waveforms to the simulation.  
 
-C3C Sabin Park and I brainstormed ideas on how to add the ori command.  
+C3C Sabin Park and I brainstormed ideas on how to add the ori command.  We decided upon the idea to create another instantiation of the 2 input mux and to lengthen the ALUsrc signal.
+
+Notes: All of the tasks were completed on time.  I was just informed that on M40 that Captain Silva did not grade the first two tasks at that point.  I finished them on time, however, I just recently made some changes to them for studying purposes.  Because of this, it probably looks like I just made a commit in the task1 and 2 sections, like I just finished them.  This is not the case.  
