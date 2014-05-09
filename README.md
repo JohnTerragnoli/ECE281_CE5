@@ -148,6 +148,8 @@ Then the table for the Main Decoder was built.  This can be seen below:
 
 The only line that was created in this line was the last row.  This line was filled out simply by considering what the "ori" command does and what it requires.  
 
+The last row of this table was used to modify the signal that went into the "controls" signal.  
+
 
 
 
@@ -160,6 +162,9 @@ In order to implement these changes into the MIPS design already created, the ma
 
 The biggest change was to create, declare, and instantiate a zero extender that was hooked up to the instruction wire.  Then, a wire signal comming out of the extender was declared.  After this was done, another instantiation of the mux2 multplexer was created.  The two inputs were the sign extend and the zero extend, as shown in the schematic above.  This was not difficult.  What was difficult was creating the control signal for this new mux.  The control signal comes form the ALUsrc, as defined in the table above.  In the original mips vhdl design, the ALUscr signal was only one bit long.  To accommodate for the ori command, the ALUsrc signal was lengthened to be 2 bits long.  Doing this, however, had implications as well.  All of the parts that used the ALUsrc signal had to account for this length change.  This was done by changing declarations to be std_logic_vectors instead of just std_logic.  Also, the control signal was lengthened by one bit, because it contains the ALUsrc signal.  
 
+The changes above was the successful idea.  However, multiple unsuccessful methods were tried first.  One of the earliest ideas was to use a new mux that chose between the extend signals.  The control signal would then come right off of the instr wire; the control signal would be 6 bits long, and the zero extend would only be chosen if the ori command was being used.  This design was flawed because the final extend signal was made too soon, and the ori command was never actually used with these results.  This is mostly likely because of the clock cycle.   I decided that using a choser for a multiplexer was a bad idea if the choser did no originate in the control box.  
+
+Another idea was to lengthen the ScrB mux to have 3 inputs.  This could have worked, however, at the time it seemed easier to just create a new instantiation of the 2 bit mux.  Therefore, this idea was quickly abandoned.  
 
 
 
