@@ -185,7 +185,7 @@ This command was then converted into binary, as in Task 2, and performed right a
 The binary code was then converted to hex so that it could be used in the program.  
 
 | 0011 | 0110 | 0101 | 0011 | 1000 | 0000 | 0000 | 0000|
-
+|-----|-----|-----|-----|-----|-----|-----|-----|
 | 3 | 6 | 5 | 3 | 8 | 0 | 0 | 0 |
 
 
