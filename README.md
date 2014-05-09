@@ -88,7 +88,7 @@ To assure that the program was implemented correctly, the signal ALUout was anal
 
 #Task 3: 
 
-The purpose of this task was to add the instruction "ori" to the MIPS design.  The ori command means to take a value in from memory and "or" this value with an immediate number.  
+The purpose of this task was to add the instruction "ori" to the MIPS design.  The ori command means to take a value from a register and "or" this value with an immediate number.  
 
 In order to implement this design, some changes were made to the MIPS Processor.  
 
@@ -101,7 +101,7 @@ Below is the original design.  Outlined in red are the portions that were change
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Altered_Schematic.PNG "Altered Controller")
 
 
-The changes to this section of the schematic can be seen below: 
+The changes to this section of the schematic can be seen below.  This is a close-up of the section outlines in red.   
 
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Altered_Schematic_2.JPG "Altered Controller")
@@ -111,7 +111,7 @@ The changes to this section of the schematic can be seen below:
 
 These changes were made for the following reasons: 
 
-In order for the ori command to work properly, the sign extend cannot be used for negative numbers.  If this were the case, then the first 4 hex digits of the result of the ori function would be "FFFF" if a negative number was used as the immediate value.  Therefore, whenever the ori command is chosen, a zero extend should be performed on the immediate value rather than a sign extend.  To decide between this sign extend and the zero extend, a multiplexer was built.  Then an extra bit was added to the ALUsrc command, so that the controller can command whether to use the zero extend or the sign extend when the it is necessary.  
+In order for the ori command to work properly, the sign extend cannot be used for negative numbers.  If this were the case, then the first 4 hex digits of the result of the ori function would be "FFFF" if a negative number was used as the immediate value.  This means that the result from the ori command would always be wrong.  Therefore, whenever the ori command is chosen, a zero extend should be performed on the immediate value rather than a sign extend.  To decide between this sign extend and the zero extend, a multiplexer was built.  Then an extra bit was added to the ALUsrc command, so that the controller can command whether to use the zero extend or the sign extend when it is necessary.  
 
 
 
@@ -130,8 +130,8 @@ Below is the ALU decoder
 | 11 | ori |
 
 
-The last line was the only part of this table changed from the instructions in the lab.  The 11 space was left blank, so this command was seized and used for the ori command;it could have been programed for anything.  
-
+The last line was the only part of this table changed from the instructions in the lab.  The 11 space was left blank, so this command was seized and used for the ori command; it could have been programed for anything.  
+ 
 
 Then the table for the Main Decoder was built.  This can be seen below: 
 
@@ -158,7 +158,7 @@ The only line that was created in this line was the last row.  This line was fil
 
 In order to implement these changes into the MIPS design already created, the main decoder and the ALU decoder were edited as required.  Copies of these files can be seen here:  [mips](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_3_mips.txt) and [testbench](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task3_Testbench.txt).  The following changes were made to the code: 
 
-The biggest change was to create, declare, and instantiate a zero extender that was hooked up to the instruction wire.  Then, a wire signal comming out of the extender was declared.  After this was done, another instantiation of the mux2 multplexer was created.  The two inputs were the sign extend and the zero extend, as shown in the schematic above.  This was not difficult.  What was difficult was creating the control signal for this mux.  The control signal comes form the ALUsrc, as defined in the table above.  In the original mips vhdl design, the ALUscr signal was only one bit long.  To accommodate for the ori command, the ALUsrc signal was lengthened to be 2 bits long.  Doing this, however, had implications as well.  All of the parts that used the ALUsrc signal had to account for this length change.  This was done by changing declarations to be std_logic_vectors instead of just std_logic.  Also, the control signal was lengthened by one bit, because it interacts with the ALUsrc signal.  
+The biggest change was to create, declare, and instantiate a zero extender that was hooked up to the instruction wire.  Then, a wire signal comming out of the extender was declared.  After this was done, another instantiation of the mux2 multplexer was created.  The two inputs were the sign extend and the zero extend, as shown in the schematic above.  This was not difficult.  What was difficult was creating the control signal for this new mux.  The control signal comes form the ALUsrc, as defined in the table above.  In the original mips vhdl design, the ALUscr signal was only one bit long.  To accommodate for the ori command, the ALUsrc signal was lengthened to be 2 bits long.  Doing this, however, had implications as well.  All of the parts that used the ALUsrc signal had to account for this length change.  This was done by changing declarations to be std_logic_vectors instead of just std_logic.  Also, the control signal was lengthened by one bit, because it contains the ALUsrc signal.  
 
 
 
@@ -200,6 +200,8 @@ A screenshot of this test can be seen below:
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_3_Simulation.PNG "Task 3 Simulation")
 
 This screenshot is the same as Task 2's screenshot up to 40ns.  After this point, the ori code can be seen at work.  The program is supposed to take the value stored at $S2, and "or" it will the immediate value x8000.  The immediate value x8000 can be seen in the instruction as the last 4 hex-bits.  It is also shown as the Y output in the extendChooser multiplexer.  Based on the Task 2 simulation, the value in $S2 must be 7.  Therefore, "or"ing 7 and x8000 should return a result of x8007, which clearly happens at 40ns.  
+
+IT WORKS!!!
 
 
 
