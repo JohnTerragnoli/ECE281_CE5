@@ -81,7 +81,7 @@ The waveform file given in the lab did no run correctly, unless the name of the 
 After the correct waveforms were added, a waveform file was created and saved, so that it could be refereced for later work.  This is the [New_Waveform](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/actual_waveform.wcfg) file. 
 
 
-To assure that the program was implemented correctly, the signal ALUout was analyzed.  For the first clock cycle, the value 44 appeared as the ALUout.  For the next clock cycle the signal was -37.  For the next clock cycle, the ALUout was the sum of those numbers.  For the next clock cycle after that, the memwrite signal changed to 7, meaning that the signal with a value of 7 is being written into memory.  All of these steps represent the tasks that the program was supposed to accomplish.  
+To assure that the program was implemented correctly, the signal ALUout was analyzed.  For the first clock cycle, the value 44 appeared as the ALUout.  This makes sense because the actual operation that is occuring is storing the value of 44 + 0 into register $S0.  To do this the ALU is required.  This same technique was used for the second isntruction.  The next clock cycle the signal was -37, corresponding to the second instruction.  For the next clock cycle, the ALUout was the sum of those numbers.  That was the third instruction.  For the next clock cycle after that, the memwrite signal changed to 7, meaning that the signal with a value of 7 is being written into memory.  All of these steps represent the tasks that the program was supposed to accomplish.  
 
 
 
@@ -219,5 +219,3 @@ The waveform file for this simulation is shown [here](https://raw.githubusercont
 C3C Sabin Park helped me figure out how to add the correct waveforms to the simulation.  
 
 C3C Sabin Park and I brainstormed ideas on how to add the ori command.  We decided upon the idea to create another instantiation of the 2 input mux and to lengthen the ALUsrc signal.
-
-Notes: All of the tasks were completed on time.  I was just informed that on M40 that Captain Silva did not grade the first two tasks at that point.  I finished them on time, however, I just recently made some changes to them for studying purposes.  Because of this, it probably looks like I just made a commit in the task1 and 2 sections, like I just finished them.  This is not the case.  
