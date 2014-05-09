@@ -208,6 +208,9 @@ This screenshot is the same as Task 2's screenshot up to 40ns.  After this point
 
 IT WORKS!!!
 
+The waveform file for this simulation is shown [here](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/task3_waveform_1.wcfg).  
+
+
 
 
 
