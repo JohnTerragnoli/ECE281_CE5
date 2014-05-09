@@ -199,6 +199,9 @@ A screenshot of this test can be seen below:
 
 ![alt tag](https://raw.githubusercontent.com/JohnTerragnoli/ECE281_CE5/master/Task_3_Simulation.PNG "Task 3 Simulation")
 
+This screenshot is the same as Task 2's screenshot up to 40ns.  After this point, the ori code can be seen at work.  The program is supposed to take the value stored at $S2, and "or" it will the immediate value x8000.  The immediate value x8000 can be seen in the instruction as the last 4 hex-bits.  It is also shown as the Y output in the extendChooser multiplexer.  Based on the Task 2 simulation, the value in $S2 must be 7.  Therefore, "or"ing 7 and x8000 should return a result of x8007, which clearly happens at 40ns.  
+
+
 
 
 
